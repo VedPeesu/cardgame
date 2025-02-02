@@ -11,12 +11,16 @@ let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 
 function startGame() {
+    renderGame()
+}
+
+function renderGame() {
     cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
     sumEl.textContent = "Sum: " + sum
     if (sum <= 20) {
         message = "Do you want to draw a card?"
     } else if (sum === 21) {
-        message = "Blackjack" 
+        message = "You got Blackjack" 
     } else {
         message = "You're out of the game"
         isAlive = false
@@ -26,5 +30,7 @@ function startGame() {
 }
 
 function newCard() {
-    console.log("Drawing a new card")
+    let card = 7
+    sum += card
+    renderGame()
 }
