@@ -48,5 +48,6 @@ function render(leads) {
             </li>
         `
     }
+    
     ulEl.innerHTML = listItems
 }
